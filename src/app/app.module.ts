@@ -6,10 +6,18 @@ import { HttpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ShopListComponent } from './shop-list/shop-list.component';
+import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    ShopListComponent,
+    ShopDetailComponent,
   ],
   imports: [
     NgbModule.forRoot(),
