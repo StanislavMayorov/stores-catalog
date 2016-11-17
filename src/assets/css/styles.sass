@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 $font-stack:    Helvetica, sans-serif
-$primary-color: blue
+$primary-color: black
+$footer-height: 100px
 
-h1
-  color: $primary-color
+html, body
+  height: 100%
+  margin: 0
+
+.wrapper
+  min-height: 100%
+  margin-bottom: -$footer-height
+
+.footer, .push
+  height: $footer-height
