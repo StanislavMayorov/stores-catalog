@@ -9,6 +9,10 @@ export class ShopService {
   constructor() {
     this.shops = [];
     this.setMock();
+    this.setMock();
+    this.setMock();
+    this.setMock();
+    this.setMock();
   }
 
   getShops() {
@@ -32,7 +36,8 @@ export class ShopService {
     var finishOpeningHoursKST = new Time(20, 0);
     var shopKST = new Shop('KST', startOpeningHoursKST,
       finishOpeningHoursKST, 'Dekabristov 5, Minsk, Belarus');
-    var product1 = new Product('Termopasta', 'Eheu, amor!Olla moris, tanquam flavum byssus.');
+    var product1 = new Product('Termopasta', 'Eheu, amor!Olla moris, tanquam flavum byssus.' +
+      ' Heu, secundus habena!Cum visus experimentum, omnes elogiumes examinare velox, germanus lamiaes.');
     var product2 = new Product('HDD Toshiba', 'Devatio undas, tanquam teres gemna.');
     shopKST.addProduct(product1);
     shopKST.addProduct(product2);
