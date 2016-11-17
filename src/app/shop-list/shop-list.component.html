@@ -1,7 +1,7 @@
 <section>
   <h1 class="list-heading">Catalog</h1>
   <div class="row">
-    <div *ngFor="let shop of shops" class="col-md-3 catalog-element">
+    <div *ngFor="let shop of shops" class="col-md-3 col-sm-6 col-xs-12 catalog-element">
       <div class="row">
         <a [routerLink]="['/shop', shop.serialNumber]">
           <h3 class="col-xs-12 shop-heading">{{shop.name}}</h3>
