@@ -1,3 +1,48 @@
-<p>
-  shop-list works!
-</p>
+<section>
+  <h1 class="list-heading">Catalog</h1>
+  <div class="row">
+    <div *ngFor="let shop of shops" class="col-md-3 catalog-element">
+      <div class="row">
+        <a>
+          <h3 class="col-xs-12 shop-heading">{{shop.name}}</h3>
+          <h4 class="col-xs-12">{{shop.startOpeningHours.toString() + ' - ' +
+            shop.finishOpeningHours.toString()}}</h4>
+          <h4 class="col-xs-12">Address: {{shop.address}}</h4>
+          <h4 class="col-xs-12">Serial number: {{shop.serialNumber}}</h4>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+<article>
+  <!--map here-->
+</article>
+
+<!--<p>-->
+<!--shop-list works!-->
+<!--</p>-->
+<!--<div class="input-group">-->
+<!--<span class="input-group-addon" id="basic-addon1">@</span>-->
+<!--<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">-->
+<!--</div>-->
+
+<!--<div class="input-group">-->
+<!--<input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">-->
+<!--<span class="input-group-addon" id="basic-addon2">@example.com</span>-->
+<!--</div>-->
+
+<!--<div class="input-group">-->
+<!--<span class="input-group-addon">$</span>-->
+<!--<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">-->
+<!--<span class="input-group-addon">.00</span>-->
+<!--</div>-->
+
+<!--<label for="basic-url">Your vanity URL</label>-->
+<!--<div class="input-group">-->
+<!--<span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>-->
+<!--<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">-->
+<!--</div>-->
+<!--<p>Test ng-bootstrap</p>-->
+<!--<ngb-progressbar type="success" [value]="25"></ngb-progressbar>-->
