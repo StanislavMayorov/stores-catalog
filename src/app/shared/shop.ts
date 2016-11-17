@@ -30,4 +30,10 @@ export class Time implements NgbTimeStruct {
     this.second = 0;
   }
 
+  toString() {
+    var date = new Date();
+    date.setHours(this.hour, this.minute, this.second);
+    return date.toTimeString().slice(0, 5);
+  }
+
 }
