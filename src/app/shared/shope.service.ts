@@ -27,6 +27,7 @@ export class ShopService {
     var product2 = new Product('HDD Toshiba', 'Devatio undas, tanquam teres gemna.');
     shopKST.addProduct(product1);
     shopKST.addProduct(product2);
+    this.setShop(shopKST);
 
     var startOpeningHoursBatareiki = new Time(9, 0);
     var finishOpeningHoursBatareiki = new Time(18, 0);
@@ -35,6 +36,7 @@ export class ShopService {
     product2 = new Product('PANASONIC AAA ENELOOP', 'Cum cotta trabem, omnes spatiies resuscitabo raptus, brevis zetaes.');
     shopBatareiki.addProduct(product1);
     shopBatareiki.addProduct(product2);
+    this.setShop(shopBatareiki);
   }
 
 
