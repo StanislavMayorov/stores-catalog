@@ -3,9 +3,10 @@ import {NgbTimeStruct} from '@ng-bootstrap/ng-bootstrap/timepicker/ngb-time-stru
 
 export class Shop {
   private products: Array<Product>;
+  serialNumber: number;
 
   constructor(public name: string, public startOpeningHours: Time,
-              public finishOpeningHours: Time) {
+              public finishOpeningHours: Time, public address: string) {
     this.products = [];
   }
 

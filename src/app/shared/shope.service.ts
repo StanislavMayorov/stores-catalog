@@ -15,14 +15,16 @@ export class ShopService {
     return this.shops.slice();
   }
 
-  setShop(newShop) {
+  setShop(newShop: Shop) {
+    newShop.serialNumber = this.shops.length;
     this.shops.push(newShop);
   }
 
   private setMock() {
     var startOpeningHoursKST = new Time(8, 0);
     var finishOpeningHoursKST = new Time(20, 0);
-    var shopKST = new Shop('KST', startOpeningHoursKST, finishOpeningHoursKST);
+    var shopKST = new Shop('KST', startOpeningHoursKST,
+      finishOpeningHoursKST, 'Minsk, Belarus, Dekabristov, 5');
     var product1 = new Product('Termopasta', 'Eheu, amor!Olla moris, tanquam flavum byssus.');
     var product2 = new Product('HDD Toshiba', 'Devatio undas, tanquam teres gemna.');
     shopKST.addProduct(product1);
@@ -31,7 +33,8 @@ export class ShopService {
 
     var startOpeningHoursBatareiki = new Time(9, 0);
     var finishOpeningHoursBatareiki = new Time(18, 0);
-    var shopBatareiki = new Shop('batareiki.by', startOpeningHoursBatareiki, finishOpeningHoursBatareiki);
+    var shopBatareiki = new Shop('batareiki.by', startOpeningHoursBatareiki,
+      finishOpeningHoursBatareiki, ' Cullman 15, Minsk, Belarus');
     product1 = new Product('DURACELL AA 2500', 'Cur ignigena potus?Cursus de castus brodium, examinare epos!');
     product2 = new Product('PANASONIC AAA ENELOOP', 'Cum cotta trabem, omnes spatiies resuscitabo raptus, brevis zetaes.');
     shopBatareiki.addProduct(product1);
