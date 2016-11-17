@@ -16,7 +16,7 @@ export class ShopService {
   }
 
   setShop(newShop: Shop) {
-    newShop.serialNumber = this.shops.length;
+    newShop.serialNumber = this.shops.length + 1;
     this.shops.push(newShop);
   }
 
@@ -24,7 +24,7 @@ export class ShopService {
     var startOpeningHoursKST = new Time(8, 0);
     var finishOpeningHoursKST = new Time(20, 0);
     var shopKST = new Shop('KST', startOpeningHoursKST,
-      finishOpeningHoursKST, 'Minsk, Belarus, Dekabristov, 5');
+      finishOpeningHoursKST, 'Dekabristov 5, Minsk, Belarus');
     var product1 = new Product('Termopasta', 'Eheu, amor!Olla moris, tanquam flavum byssus.');
     var product2 = new Product('HDD Toshiba', 'Devatio undas, tanquam teres gemna.');
     shopKST.addProduct(product1);
