@@ -15,6 +15,13 @@ export class ShopService {
     return this.shops.slice();
   }
 
+  getShopBySerialNumber(serialNumber: number) {
+    for (let shop of this.shops) {
+      if (shop.serialNumber === serialNumber)
+        return shop
+    }
+  }
+
   setShop(newShop: Shop) {
     newShop.serialNumber = this.shops.length + 1;
     this.shops.push(newShop);
