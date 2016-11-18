@@ -2,6 +2,7 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ShopListComponent } from "./shop-list/shop-list.component";
 import { ShopDetailComponent } from "./shop-detail/shop-detail.component";
+import { AddShopComponent } from "./add-shop/add-shop.component";
 
 
 const appRoutes: Routes = <Routes>[
@@ -12,6 +13,10 @@ const appRoutes: Routes = <Routes>[
   {
     path: 'shop/:serialNumber',
     component: ShopDetailComponent
+  },
+  {
+    path: 'add-shop',
+    component: AddShopComponent
   }
 ];
 

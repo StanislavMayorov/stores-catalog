@@ -15,6 +15,7 @@ import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 import { ProductFormComponent } from './shop-detail/product-form/product-form.component';
 import { updateProductModal } from "./shop-detail/update-product-modal/update-product-modal.component";
 import { AddProductModalComponent } from './shop-detail/add-product-modal/add-product-modal.component';
+import { AddShopComponent } from './add-shop/add-shop.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddProductModalComponent } from './shop-detail/add-product-modal/add-pr
     ShopDetailComponent,
     updateProductModal,
     ProductFormComponent,
-    AddProductModalComponent
+    AddProductModalComponent,
+    AddShopComponent
   ],
   entryComponents: [
     updateProductModal,
