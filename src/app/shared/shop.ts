@@ -18,8 +18,8 @@ export class Shop {
     this.products.push(newProduct)
   }
 
-  updateProduct() {
-
+  updateProduct(index: number, newProduct: Product) {
+    this.products[index] = newProduct;
   }
 
   deleteProduct(index: number) {
