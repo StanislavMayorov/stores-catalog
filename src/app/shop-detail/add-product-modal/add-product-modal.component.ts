@@ -28,16 +28,13 @@ import { Product } from "../../shared/product";
   selector: 'app-add-product-modal',
   template: `
     <div class="modal-header">
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.close('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
       <h4 class="modal-title">Add new product to {{shop.name}}</h4>
     </div>
     <div class="modal-body">
       <app-product-form [product]="this.product" (submit)="save($event)"></app-product-form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close click')">Close</button>
     </div>
   `
 })
