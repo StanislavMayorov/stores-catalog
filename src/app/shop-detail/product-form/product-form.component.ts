@@ -9,29 +9,20 @@ import { NgForm } from "@angular/forms";
 })
 export class ProductFormComponent implements OnInit {
   @Input() product: Product;
-  @Output() submit = new EventEmitter();
+  @Output() save = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit() {
-    this.product = Object.assign(this.product);
-    //this.save = new EventEmitter();
   }
 
   onSubmit(form: NgForm) {
-    debugger;
     if (form.valid) {
-      var newElement = new Product(form.value.name, form.value.description);
-      this.submit.emit(newElement)
+      let newElement = new Product(form.value.name, form.value.description);
+      this.save.emit(newElement)
     }
 
-  }
-
-  onSave() {
-    debugger;
-    this.product.name = 'Changed';
-    this.submit.emit(this.product);
   }
 
 }

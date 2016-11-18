@@ -1,23 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-//
-// @Component({
-//   selector: 'app-add-product-modal',
-//   template: `
-//     <p>
-//       add-product-modal Works!
-//     </p>
-//   `,
-//   styles: []
-// })
-// export class AddProductModalComponent implements OnInit {
-//
-//   constructor() { }
-//
-//   ngOnInit() {
-//   }
-//
-// }
-
 import { Component, OnInit, Input } from '@angular/core';
 import { Shop } from "../../shared/shop";
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -34,7 +14,7 @@ import { Product } from "../../shared/product";
       <h4 class="modal-title">Add new product to {{shop.name}}</h4>
     </div>
     <div class="modal-body">
-      <app-product-form [product]="this.product" (submit)="save($event)"></app-product-form>
+      <app-product-form [product]="this.product" (save)="add($event)"></app-product-form>
     </div>
   `
 })
@@ -49,7 +29,7 @@ export class AddProductModalComponent implements OnInit {
 
   }
 
-  save(newProduct: Product) {
+  add(newProduct: Product) {
     this.shop.addProduct(newProduct);
     this.activeModal.close('Close click');
   }

@@ -14,7 +14,7 @@ import { Product } from "../../shared/product";
       <h4 class="modal-title">Edit {{product.name}} product</h4>
     </div>
     <div class="modal-body">
-      <app-product-form [product]="this.product" (submit)="save($event)"></app-product-form>
+      <app-product-form [product]="this.product" (save)="update($event)"></app-product-form>
     </div>
   `
 })
@@ -30,7 +30,7 @@ export class updateProductModal implements OnInit {
 
   }
 
-  save(newProduct: Product) {
+  update(newProduct: Product) {
     this.shop.updateProduct(this.productIndex, newProduct);
     this.activeModal.close('Close click');
   }
