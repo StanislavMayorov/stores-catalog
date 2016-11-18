@@ -14,6 +14,7 @@ import { ShopService } from "./shared/shope.service";
 import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 import { ProductFormComponent } from './shop-detail/product-form/product-form.component';
 import { updateProductModal } from "./shop-detail/update-product-modal/update-product-modal.component";
+import { AddProductModalComponent } from './shop-detail/add-product-modal/add-product-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,12 @@ import { updateProductModal } from "./shop-detail/update-product-modal/update-pr
     ShopListComponent,
     ShopDetailComponent,
     updateProductModal,
-    ProductFormComponent
+    ProductFormComponent,
+    AddProductModalComponent
   ],
-  entryComponents: [updateProductModal],
+  entryComponents: [
+    updateProductModal,
+    AddProductModalComponent],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,

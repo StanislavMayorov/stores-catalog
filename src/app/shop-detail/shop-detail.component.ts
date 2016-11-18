@@ -7,6 +7,7 @@ import 'rxjs/add/operator/switchMap';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from "../shared/product";
 import { updateProductModal } from "./update-product-modal/update-product-modal.component";
+import { AddProductModalComponent } from "./add-product-modal/add-product-modal.component";
 
 
 @Component({
@@ -50,6 +51,15 @@ export class ShopDetailComponent implements OnInit {
 
   deleteHandler(index: number) {
     this.shop.deleteProduct(index);
+  }
+
+  addHandler(){
+    const modalRef = this.modalService.open(AddProductModalComponent);
+    modalRef.componentInstance.shop = this.shop;
+    modalRef.componentInstance.product = new Product('','');
+    modalRef.result.then(() => {
+      this.updateProducts()
+    })
   }
 
 }
