@@ -22,6 +22,10 @@ export class Shop {
 
   }
 
+  deleteProduct(index: number) {
+    this.products.splice(index, 1);
+  }
+
 }
 
 export class Time implements NgbTimeStruct {
