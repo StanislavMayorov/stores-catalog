@@ -50,7 +50,11 @@ export class ShopDetailComponent implements OnInit {
   }
 
   deleteHandler(index: number) {
-    this.shop.deleteProduct(index);
+    const isConfirm = confirm(`Are you sure to delete ${this.shop.getProducts()[index].name}?`);
+    if (isConfirm) {
+      this.shop.deleteProduct(index);
+    }
+
   }
 
   addHandler(){
