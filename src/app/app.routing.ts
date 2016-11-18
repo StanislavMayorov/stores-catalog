@@ -11,7 +11,7 @@ const appRoutes: Routes = <Routes>[
     component: ShopListComponent
   },
   {
-    path: 'shop/:serialNumber',
+    path: 'shop/:id',
     component: ShopDetailComponent
   },
   {

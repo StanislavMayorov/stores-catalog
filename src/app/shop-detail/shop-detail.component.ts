@@ -24,14 +24,10 @@ export class ShopDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params
-      .switchMap((params: Params) => params['serialNumber'])
-      .subscribe((serialNumber: string) => {
-          this.serialNumber = Number(serialNumber);
-          this.updateProducts();
-          //this.shop = this.shopService.getShopBySerialNumber(Number(serialNumber))
-        }
-      );
+    this.route.params.subscribe((params: Params) => {
+      this.serialNumber = +params['id'];
+      this.updateProducts();
+    });
   }
 
   private updateProducts() {
@@ -57,10 +53,10 @@ export class ShopDetailComponent implements OnInit {
 
   }
 
-  addHandler(){
+  addHandler() {
     const modalRef = this.modalService.open(AddProductModalComponent);
     modalRef.componentInstance.shop = this.shop;
-    modalRef.componentInstance.product = new Product('','');
+    modalRef.componentInstance.product = new Product('', '');
     modalRef.result.then(() => {
       this.updateProducts()
     })
