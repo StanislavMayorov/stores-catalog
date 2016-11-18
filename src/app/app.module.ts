@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ShopListComponent } from './shop-list/shop-list.component';
-import { ShopDetailComponent } from './shop-detail/shop-detail.component';
+import { ShopDetailComponent, NgbdModalContent } from './shop-detail/shop-detail.component';
 import { routing } from "./app.routing";
 import { ShopService } from "./shared/shope.service";
 
@@ -19,8 +19,9 @@ import { ShopService } from "./shared/shope.service";
     HeaderComponent,
     FooterComponent,
     ShopListComponent,
-    ShopDetailComponent,
+    ShopDetailComponent, NgbdModalContent
   ],
+  entryComponents: [NgbdModalContent],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
