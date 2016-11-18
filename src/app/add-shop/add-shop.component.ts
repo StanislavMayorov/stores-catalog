@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from "../shared/shope.service";
 import { Shop, Time } from "../shared/shop";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Shop, Time } from "../shared/shop";
 export class AddShopComponent implements OnInit {
   shop: Shop;
 
-  constructor(private shopService: ShopService) {
+  constructor(private shopService: ShopService, private router: Router) {
   }
 
   ngOnInit() {
@@ -22,8 +23,9 @@ export class AddShopComponent implements OnInit {
   }
 
   add(newShop: Shop) {
-    debugger;
     this.shopService.setShop(newShop);
+    this.router.navigateByUrl("/");
+
   }
 
 }
