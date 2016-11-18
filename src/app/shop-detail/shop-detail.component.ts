@@ -35,7 +35,7 @@ export class ShopDetailComponent implements OnInit {
 
   }
 
-  editHandler(index: number) {
+  editProductHandler(index: number) {
     const modalRef = this.modalService.open(updateProductModal);
     modalRef.componentInstance.productIndex = index;
     modalRef.componentInstance.shop = this.shop;
@@ -45,7 +45,7 @@ export class ShopDetailComponent implements OnInit {
     })
   }
 
-  deleteHandler(index: number) {
+  deleteProductHandler(index: number) {
     const isConfirm = confirm(`Are you sure to delete ${this.shop.getProducts()[index].name}?`);
     if (isConfirm) {
       this.shop.deleteProduct(index);
@@ -53,7 +53,7 @@ export class ShopDetailComponent implements OnInit {
 
   }
 
-  addHandler() {
+  addProductHandler() {
     const modalRef = this.modalService.open(AddProductModalComponent);
     modalRef.componentInstance.shop = this.shop;
     modalRef.componentInstance.product = new Product('', '');

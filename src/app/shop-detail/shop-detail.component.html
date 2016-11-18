@@ -15,8 +15,8 @@
       <td>{{product.name}}</td>
       <td>{{product.description}}</td>
       <td>
-        <button class="btn btn-default" type="button" (click)="editHandler(i)">Edit</button>
-        <button class="btn btn-danger" type="button" (click)="deleteHandler(i)">Delete</button>
+        <button class="btn btn-default" type="button" (click)="editProductHandler(i)">Edit</button>
+        <button class="btn btn-danger" type="button" (click)="deleteProductHandler(i)">Delete</button>
       </td>
     </tr>
     <tr>
@@ -24,11 +24,12 @@
       <td></td>
       <td></td>
       <td>
-        <button class="btn btn-primary" type="button" (click)="addHandler()">Add</button>
+        <button class="btn btn-primary" type="button" (click)="addProductHandler()">Add</button>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
+<button type="button" class="btn btn-default btn-lg">Edit {{shop.name}} shop</button>
 <template ngbModalContainer></template>
 
