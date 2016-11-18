@@ -1,9 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Params, ActivatedRoute } from "@angular/router";
-import { ShopService } from "../../shared/shope.service";
 import { Shop } from "../../shared/shop";
-import 'rxjs/add/operator/switchMap';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from "../../shared/product";
 
 
@@ -33,7 +30,7 @@ export class updateProductModal implements OnInit {
   }
 
   ngOnInit() {
-    this.product = this.shop.getProducts()[this.productIndex]
+
   }
 
   save(newProduct: Product) {
