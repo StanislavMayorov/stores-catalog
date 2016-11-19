@@ -19,7 +19,6 @@ export class ShopFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    debugger;
     if (form.valid) {
       let newElement = new Shop(form.value.name, form.value.startOpeningHours,
         form.value.finishOpeningHours, form.value.address);

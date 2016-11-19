@@ -31,7 +31,6 @@ export class UpdateShopModalComponent implements OnInit {
   }
 
   update(changedShop: Shop) {
-    debugger;
     this.shopService.updateShop(this.serialNumber - 1, changedShop);
     this.activeModal.close('Close click');
     this.router.navigate(['/shop', this.serialNumber]);
