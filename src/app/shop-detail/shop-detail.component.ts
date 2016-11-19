@@ -8,6 +8,7 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from "../shared/product";
 import { updateProductModal } from "./update-product-modal/update-product-modal.component";
 import { AddProductModalComponent } from "./add-product-modal/add-product-modal.component";
+import { UpdateShopModalComponent } from "./update-shop-modal/update-shop-modal.component";
 
 
 @Component({
@@ -60,6 +61,16 @@ export class ShopDetailComponent implements OnInit {
     modalRef.result.then(() => {
       this.updateProducts()
     })
+  }
+
+  editShopHandler() {
+    const modalRef = this.modalService.open(UpdateShopModalComponent);
+    modalRef.componentInstance.shop = this.shop;
+    modalRef.componentInstance.serialNumber = this.serialNumber;
+    modalRef.result.then(() => {
+      //this.updateProducts()
+    })
+
   }
 
 }

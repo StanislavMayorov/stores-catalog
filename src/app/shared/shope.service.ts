@@ -26,6 +26,13 @@ export class ShopService {
     }
   }
 
+  updateShop(index: number, changedShop: Shop) {
+    this.shops[index].name = changedShop.name;
+    this.shops[index].address = changedShop.address;
+    this.shops[index].startOpeningHours = changedShop.startOpeningHours;
+    this.shops[index].finishOpeningHours = changedShop.finishOpeningHours;
+  }
+
   setShop(newShop: Shop) {
     newShop.serialNumber = this.shops.length + 1;
     this.shops.push(newShop);
