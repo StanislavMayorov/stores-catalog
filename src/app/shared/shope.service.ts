@@ -26,6 +26,13 @@ export class ShopService {
     }
   }
 
+  updateSerialsNumber(newShops: Array<Shop>) {
+    for (let i = 0; i < newShops.length; i++) {
+      newShops[i].serialNumber = i + 1;
+    }
+    this.shops = newShops.slice();
+  }
+
   updateShop(index: number, changedShop: Shop) {
     this.shops[index].name = changedShop.name;
     this.shops[index].address = changedShop.address;
