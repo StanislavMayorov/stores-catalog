@@ -19,6 +19,7 @@ import { AddShopComponent } from './add-shop/add-shop.component';
 import { ShopFormComponent } from './shared/shop-form/shop-form.component';
 import { UpdateShopModalComponent } from './shop-detail/update-shop-modal/update-shop-modal.component';
 import { DragulaModule } from "ng2-dragula/ng2-dragula";
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
   declarations: [
@@ -40,12 +41,15 @@ import { DragulaModule } from "ng2-dragula/ng2-dragula";
     UpdateShopModalComponent
   ],
   imports: [
-    NgbModule.forRoot(),
     DragulaModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    NgbModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAGb1MTX-euG06undWOO9WrTujXSd9SJMI'
+    })
   ],
   providers: [ShopService],
   bootstrap: [AppComponent]
