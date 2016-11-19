@@ -23,8 +23,7 @@ export class UpdateShopModalComponent implements OnInit {
   @Input() shop: Shop;
   @Input() serialNumber: number;
 
-  constructor(private shopService: ShopService, private router: Router,
-              public activeModal: NgbActiveModal) {
+  constructor(private shopService: ShopService, public activeModal: NgbActiveModal) {
   }
 
   ngOnInit() {
@@ -33,7 +32,6 @@ export class UpdateShopModalComponent implements OnInit {
   update(changedShop: Shop) {
     this.shopService.updateShop(this.serialNumber - 1, changedShop);
     this.activeModal.close('Close click');
-    this.router.navigate(['/shop', this.serialNumber]);
   }
 
 

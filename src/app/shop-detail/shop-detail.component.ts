@@ -1,6 +1,6 @@
 ///<reference path="../../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
 import { Component, OnInit, Input } from '@angular/core';
-import { Params, ActivatedRoute } from "@angular/router";
+import { Params, ActivatedRoute, Router } from "@angular/router";
 import { ShopService } from "../shared/shope.service";
 import { Shop } from "../shared/shop";
 import 'rxjs/add/operator/switchMap';
@@ -21,7 +21,7 @@ export class ShopDetailComponent implements OnInit {
   serialNumber: number;
 
   constructor(private route: ActivatedRoute, private shopService: ShopService,
-              private modalService: NgbModal) {
+              private modalService: NgbModal, private router: Router) {
   }
 
   ngOnInit() {
@@ -68,7 +68,7 @@ export class ShopDetailComponent implements OnInit {
     modalRef.componentInstance.shop = this.shop;
     modalRef.componentInstance.serialNumber = this.serialNumber;
     modalRef.result.then(() => {
-      //this.updateProducts()
+      this.router.navigate(['/shop', this.serialNumber]);
     })
 
   }
