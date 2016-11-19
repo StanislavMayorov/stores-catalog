@@ -9,10 +9,6 @@ export class ShopService {
   constructor() {
     this.shops = [];
     this.setMock();
-    this.setMock();
-    this.setMock();
-    this.setMock();
-    this.setMock();
   }
 
   getShops() {
@@ -49,7 +45,7 @@ export class ShopService {
     let startOpeningHoursKST = new Time(8, 0);
     let finishOpeningHoursKST = new Time(20, 0);
     let shopKST = new Shop('KST', startOpeningHoursKST,
-      finishOpeningHoursKST, 'Dekabristov 5, Minsk, Belarus');
+      finishOpeningHoursKST, 'Минск, Декабристов, 5');
     let product1 = new Product('Termopasta', 'Eheu, amor!Olla moris, tanquam flavum byssus.' +
       ' Heu, secundus habena!Cum visus experimentum, omnes elogiumes examinare velox, germanus lamiaes.');
     let product2 = new Product('HDD Toshiba', 'Devatio undas, tanquam teres gemna.');
@@ -60,12 +56,20 @@ export class ShopService {
     let startOpeningHoursBatareiki = new Time(9, 0);
     let finishOpeningHoursBatareiki = new Time(18, 0);
     let shopBatareiki = new Shop('batareiki.by', startOpeningHoursBatareiki,
-      finishOpeningHoursBatareiki, 'Cullman 15, Minsk, Belarus');
+      finishOpeningHoursBatareiki, 'Минск, Кульман, 15');
     product1 = new Product('DURACELL AA 2500', 'Cur ignigena potus?Cursus de castus brodium, examinare epos!');
     product2 = new Product('PANASONIC AAA ENELOOP', 'Cum cotta trabem, omnes spatiies resuscitabo raptus, brevis zetaes.');
     shopBatareiki.addProduct(product1);
     shopBatareiki.addProduct(product2);
     this.setShop(shopBatareiki);
+
+    let startOpeningHours = new Time(10, 0);
+    let finishOpeningHours = new Time(21, 0);
+    let shop = new Shop('21vek', startOpeningHours,
+      finishOpeningHours, 'Минск, Тростенецкая, 17');
+    product1 = new Product('Prestigio Wize P3 3508', 'coordinataes ortum!Cur orgia mori?Cur glos observare?');
+    shop.addProduct(product1);
+    this.setShop(shop);
   }
 
 
