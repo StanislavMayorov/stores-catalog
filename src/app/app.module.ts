@@ -18,6 +18,7 @@ import { AddProductModalComponent } from './shop-detail/add-product-modal/add-pr
 import { AddShopComponent } from './add-shop/add-shop.component';
 import { ShopFormComponent } from './shared/shop-form/shop-form.component';
 import { UpdateShopModalComponent } from './shop-detail/update-shop-modal/update-shop-modal.component';
+import { DragulaModule } from "ng2-dragula/ng2-dragula";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UpdateShopModalComponent } from './shop-detail/update-shop-modal/update
   ],
   imports: [
     NgbModule.forRoot(),
+    DragulaModule,
     BrowserModule,
     FormsModule,
     HttpModule,
