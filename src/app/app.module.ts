@@ -20,6 +20,7 @@ import { ShopFormComponent } from './shared/shop-form/shop-form.component';
 import { UpdateShopModalComponent } from './shop-detail/update-shop-modal/update-shop-modal.component';
 import { DragulaModule } from "ng2-dragula/ng2-dragula";
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { GoogleMapsComponent } from './shop-list/google-maps/google-maps.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     AddProductModalComponent,
     AddShopComponent,
     ShopFormComponent,
-    UpdateShopModalComponent
+    UpdateShopModalComponent,
+    GoogleMapsComponent
   ],
   entryComponents: [
     updateProductModal,
