@@ -6,8 +6,7 @@
         <a [routerLink]="['/shop', shop.serialNumber]">
           <h3 class="col-xs-12 shop-heading">{{shop.name}}</h3>
         </a>
-        <h4 class="col-xs-12">{{shop.startOpeningHours.toString() + ' - ' +
-          shop.finishOpeningHours.toString()}}</h4>
+        <h4 class="col-xs-12">{{shop.getOpeningHours()}}</h4>
         <h4 class="col-xs-12">Address: {{shop.address}}</h4>
         <h4 class="col-xs-12">Serial number: {{shop.serialNumber}}</h4>
       </div>

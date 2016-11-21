@@ -26,6 +26,11 @@ export class Shop {
     this.products.splice(index, 1);
   }
 
+  getOpeningHours() {
+    return this.startOpeningHours.toString() + ' - ' +
+      this.finishOpeningHours.toString()
+  }
+
 }
 
 export class Time implements NgbTimeStruct {
