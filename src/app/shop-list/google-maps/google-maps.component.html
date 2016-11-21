@@ -1,5 +1,15 @@
-<sebm-google-map [latitude]="lat" [longitude]="lng">
-  <sebm-google-map-marker *ngFor="let marker of markers" [latitude]="marker.latitude"
-                          [longitude]="marker.longitude"></sebm-google-map-marker>
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+  <sebm-google-map-marker *ngFor="let marker of markers"
+                          [latitude]="marker.latitude"
+                          [longitude]="marker.longitude"
+                          [title]="marker.shop.name"
+                          [openInfoWindow]="true">
+    <sebm-google-map-info-window [disableAutoPan]="false">
+      <h4>{{marker.shop.name}}</h4>
+      <hr>
+      <p>{{marker.shop.getOpeningHours()}}</p>
+      <p>{{marker.shop.address}}</p>
+    </sebm-google-map-info-window>
+  </sebm-google-map-marker>
 </sebm-google-map>
 
