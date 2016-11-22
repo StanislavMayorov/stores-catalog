@@ -19,7 +19,6 @@
       "mobile": false,
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
-        "../node_modules/bootstrap/dist/css/bootstrap-theme.css",
         "../node_modules/dragula/dist/dragula.css",
         "assets/css/styles.sass"
       ],
