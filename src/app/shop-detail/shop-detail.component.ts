@@ -9,6 +9,7 @@ import { Product } from "../shared/product";
 import { updateProductModal } from "./update-product-modal/update-product-modal.component";
 import { AddProductModalComponent } from "./add-product-modal/add-product-modal.component";
 import { UpdateShopModalComponent } from "./update-shop-modal/update-shop-modal.component";
+import { isUndefined } from "util";
 
 
 @Component({
@@ -33,7 +34,9 @@ export class ShopDetailComponent implements OnInit {
 
   private updateProducts() {
     this.shop = this.shopService.getShopBySerialNumber(this.serialNumber);
-
+    if (isUndefined(this.shop)) {
+      this.router.navigate(['/not-found']);
+    }
   }
 
   editProductHandler(index: number) {
