@@ -1,5 +1,12 @@
+$break-height-sm: 700px
+$break-height-xs: 450px
+
 sebm-google-map
   height: 600px
+  @media screen and (max-height: $break-height-sm)
+    height: 350px
+  @media screen and (max-height: $break-height-xs)
+    height: 180px
 
 sebm-google-map
   hr

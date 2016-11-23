@@ -1,7 +1,8 @@
 <section>
   <h1 class="list-heading">Catalog</h1>
   <div class="row" [dragula]='"shops-bag"' [dragulaModel]='shops'>
-    <div *ngFor="let shop of shops" class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12 catalog-element">
+    <div *ngFor="let shop of shops"
+         class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 catalog-element">
       <div class="row">
         <a [routerLink]="['/shop', shop.serialNumber]">
           <h3 class="col-xs-12 shop-heading">{{shop.name}}</h3>
@@ -10,7 +11,6 @@
         <h4 class="col-xs-12">Address: {{shop.address}}</h4>
         <h4 class="col-xs-12">Serial number: {{shop.serialNumber}}</h4>
       </div>
-
     </div>
   </div>
 </section>

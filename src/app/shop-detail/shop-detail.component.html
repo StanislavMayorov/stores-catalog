@@ -1,34 +1,43 @@
 <div class="panel panel-default">
   <div class="panel-heading">Products from {{shop.name}}</div>
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <th class="col-md-1 hidden-xs">#</th>
-      <th class="col-md-2 col-xs-1">Product</th>
-      <th class="col-md-7 col-xs-7">Description</th>
-      <th class="col-md-2 col-xs-4">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let product of shop.getProducts();let i = index;">
-      <th class="hidden-xs">{{i + 1}}</th>
-      <td>{{product.name}}</td>
-      <td>{{product.description}}</td>
-      <td>
-        <button class="btn btn-default" type="button" (click)="editProductHandler(i)">Edit</button>
-        <button class="btn btn-danger" type="button" (click)="deleteProductHandler(i)">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="hidden-xs"></th>
-      <td></td>
-      <td></td>
-      <td>
-        <button class="btn btn-default" type="button" (click)="addProductHandler()">Add</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-hover table-condensed-xs">
+      <thead>
+      <tr>
+        <th class="col-md-1 hidden-xs">#</th>
+        <th class="col-xs-4 visible-xs">Action</th>
+        <th class="col-md-2 col-xs-1">Product</th>
+        <th class="col-md-7 col-xs-7">Description</th>
+        <th class="col-md-2 hidden-xs">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of shop.getProducts();let i = index;">
+        <th class="hidden-xs">{{i + 1}}</th>
+        <td class="visible-xs">
+          <button class="btn btn-default btn-sm" type="button" (click)="editProductHandler(i)">Edit</button>
+          <button class="btn btn-danger btn-sm" type="button" (click)="deleteProductHandler(i)">Delete</button>
+        </td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td class="hidden-xs">
+          <button class="btn btn-default" type="button" (click)="editProductHandler(i)">Edit</button>
+          <button class="btn btn-danger" type="button" (click)="deleteProductHandler(i)">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <th class="hidden-xs"></th>
+        <td>
+          <button class="btn btn-default visible-xs" type="button" (click)="addProductHandler()">Add</button>
+        </td>
+        <td></td>
+        <td>
+          <button class="btn btn-default btn-sm hidden-xs" type="button" (click)="addProductHandler()">Add</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <button type="button" class="btn btn-default btn-lg" (click)="editShopHandler()">Edit {{shop.name}} shop</button>
 <template ngbModalContainer></template>
