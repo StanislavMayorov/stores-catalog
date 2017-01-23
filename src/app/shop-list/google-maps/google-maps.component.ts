@@ -12,8 +12,9 @@ import { Marker } from "../../shared/marker";
 export class GoogleMapsComponent implements OnInit {
   @Input() shops: Array<Shop>;
   private markers: Array<Marker>;
-  lat: number = 53.90453979999999;
-  lng: number = 27.5615244;
+  latMinsk: number = 53.90453979999999;
+  lngMinsk: number = 27.5615244;
+
 
 
   constructor(private googleMapsGeocodingService: GoogleMapsGeocodingService) {
@@ -25,7 +26,8 @@ export class GoogleMapsComponent implements OnInit {
       this.googleMapsGeocodingService.getGeocoding(shop.address)
         .subscribe((response: any) => {
           if (response.status === "OK"
-            && response.results[0].geometry.location_type === "ROOFTOP") {
+            && (response.results[0].geometry.location_type === "ROOFTOP"
+                || response.results[0].geometry.location_type === "RANGE_INTERPOLATED")) {
             let newMarker = new Marker(shop, response.results[0].geometry.location.lat,
               response.results[0].geometry.location.lng);
             this.markers.push(newMarker);
